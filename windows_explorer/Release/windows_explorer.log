@@ -1,0 +1,8 @@
+﻿  stdafx.cpp
+  windows_explorer.cpp
+d:\laptrinhc\thuc tap\windows_explorer\windows_explorer\windows_explorer\windows_explorer.cpp(151): warning C4101: 'id': unreferenced local variable
+d:\laptrinhc\thuc tap\windows_explorer\windows_explorer\windows_explorer\windows_explorer.cpp(207): warning C4101: 'icex': unreferenced local variable
+  Generating code
+  All 6 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  windows_explorer.vcxproj -> D:\LapTrinhC\THUC TAP\windows_explorer\windows_explorer\Release\windows_explorer.exe
