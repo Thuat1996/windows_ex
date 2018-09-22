@@ -183,7 +183,13 @@
     <Image Include="C:\Users\Dell\Desktop\Explorer updated\Explorer updated\Explorer\DRIVE.bmp" />
     <Image Include="C:\Users\Dell\Desktop\Explorer updated\Explorer updated\Explorer\FILE.bmp" />
     <Image Include="C:\Users\Dell\Desktop\Explorer updated\Explorer updated\Explorer\FOLDER.bmp" />
+    <Image Include="c:\users\dell\desktop\explorer updated\explorer updated\explorer\icon1.ico" />
     <Image Include="C:\Users\Dell\Desktop\Explorer updated\Explorer updated\Explorer\PC.bmp" />
+    <Image Include="explorer.ico" />
+    <Image Include="file.ico" />
+    <Image Include="folderClosed.ico" />
+    <Image Include="folderOpen.ico" />
+    <Image Include="hard-disk.ico" />
     <Image Include="small.ico" />
     <Image Include="windows_explorer.ico" />
   </ItemGroup>

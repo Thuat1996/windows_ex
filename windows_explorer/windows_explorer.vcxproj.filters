@@ -105,5 +105,23 @@
     <Image Include="C:\Users\Dell\Desktop\Explorer updated\Explorer updated\Explorer\PC.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="c:\users\dell\desktop\explorer updated\explorer updated\explorer\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="explorer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="file.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="folderClosed.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="folderOpen.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="hard-disk.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

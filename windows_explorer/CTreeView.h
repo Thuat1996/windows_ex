@@ -2,6 +2,10 @@
 #include "stdafx.h"
 #include "windows_explorer.h"
 #include "commctrl.h"
+//#define DRIVE_IM 0
+//#define FOLDER_IM 1
+//#define FILE 2
+//#define CDROM 3
 #define IDC_MAIN_TREEVIEW 4
 class CTreeView
 {
@@ -23,5 +27,6 @@ public:
 	void AddRoot(HWND, TCHAR*); // them nut cha
 	void AddNote(HWND, TCHAR*, HTREEITEM);// them nut con
 	void getPath(HWND, HTREEITEM, TCHAR); // ham lay duong da
+	void setImage(HWND);
 };
 
