@@ -15,6 +15,7 @@ HWND CStatus::CreateStatus(HWND hWnd)
 		(HMENU)IDC_STATUS, GetModuleHandle(NULL), NULL);
 	SendMessage(hStatus, SB_SETPARTS, -1, -1);
 	SendMessage(hStatus, SB_SETTEXT, 0, (LPARAM)_T("Hello"));
+	
 	return hStatus;
 }
 void CStatus::size(HWND hWnd)

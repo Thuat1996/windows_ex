@@ -8,5 +8,7 @@ public:
 	~CCombobox();
 	HWND CreateCombobox(HWND);
 	void size(HWND);
+	void AddText(HWND, TCHAR*); // lay text tu treeview, list view gui len
+
 };
 

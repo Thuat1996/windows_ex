@@ -20,7 +20,7 @@ public:
 	~CTreeView();
 	HWND CreateTV(HWND,HINSTANCE);
 	void size(HWND);
-	void onSelChange(HWND); //khi click lua chon vao tree
+	void onSelChange(HWND,CListview*,CCombobox*); //khi click lua chon vao tree
 	void OnClick(HWND);
 	void LoadFolder(HWND, TCHAR*, HTREEITEM);
 	void LoadDisk(HWND);
@@ -28,5 +28,6 @@ public:
 	void AddNote(HWND, TCHAR*, HTREEITEM);// them nut con
 	void getPath(HWND, HTREEITEM, TCHAR); // ham lay duong da
 	void setImage(HWND);
+	void DeleteItem(HWND);
 };
 

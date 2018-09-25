@@ -22,13 +22,13 @@ CTreeView::CTreeView()
 CTreeView::~CTreeView()
 {
 }
-//HWND CTreeView::CreateTV(HWND hWnd,HINSTANCE g_hInst)
-//{
-//	hwndTV = CreateWindow(WC_TREEVIEW, L"Tree View", WS_CHILD | WS_VISIBLE | WS_BORDER | TVS_HASLINES | TVS_HASBUTTONS
-//		| TVS_SINGLEEXPAND, 0, 85,
-//		300, 200, hWnd, (HMENU)IDC_MAIN_TREEVIEW, g_hInst, NULL);
-//	return hwndTV;
-//}
+HWND CTreeView::CreateTV(HWND hWnd,HINSTANCE g_hInst)
+{
+	hwndTV = CreateWindow(WC_TREEVIEW, L"Tree View", WS_CHILD | WS_VISIBLE | WS_BORDER | TVS_HASLINES | TVS_HASBUTTONS
+		| TVS_SINGLEEXPAND, 0, 85,
+		300, 200, hWnd, (HMENU)IDC_MAIN_TREEVIEW, g_hInst, NULL);
+	return hwndTV;
+}
 void CTreeView::size(HWND hWnd)
 {
 	RECT rect;
@@ -114,9 +114,8 @@ void CTreeView::AddNote(HWND hWnd, TCHAR* szText, HTREEITEM Parent)
 	tvinsert.item.pszText = szText;
 	SendDlgItemMessage(hWnd, IDC_MAIN_TREEVIEW,TVM_INSERTITEM, 0, (LPARAM)&tvinsert);
 }
-void CTreeView::onSelChange(HWND hWnd)
+void CTreeView::onSelChange(HWND hWnd, CListview *pList,CCombobox *pcbb)
 {
-	//setImage(hwndTV);
 	int wIndex = 0;
 	HTREEITEM save;
 	bool check = FALSE;
@@ -151,6 +150,9 @@ void CTreeView::onSelChange(HWND hWnd)
 	}
 	//duyet folder
 	LoadFolder(hWnd, Path, save);
+	pList->LoadFolder(hWnd, Path);
+	pcbb->AddText(hWnd, Path);
+	//pList->SetImageList(hWnd);
 }
 //set image cho treeview
 void CTreeView::setImage(HWND hWnd)
@@ -176,5 +178,9 @@ void CTreeView::setImage(HWND hWnd)
 	SendMessage(hWnd, TVM_SETIMAGELIST, (WPARAM)TVSIL_NORMAL, (LPARAM)hImageList);
 	
 	//TreeView_SetImageList(hwndTV, himl, TVSIL_NORMAL);
+}
+void CTreeView::DeleteItem(HWND hWnd)
+{
+	SendDlgItemMessage(hWnd, IDC_MAIN_TREEVIEW, TVM_DELETEITEM, TVGN_CARET, (LPARAM)tvi.hItem);
 }
 

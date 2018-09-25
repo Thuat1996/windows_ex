@@ -154,6 +154,7 @@
     <ClInclude Include="CTabView.h" />
     <ClInclude Include="CToolbar.h" />
     <ClInclude Include="CTreeView.h" />
+    <ClInclude Include="Otherfuntions.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="CTabView.cpp" />
     <ClCompile Include="CToolbar.cpp" />
     <ClCompile Include="CTreeView.cpp" />
+    <ClCompile Include="Otherfuntions.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

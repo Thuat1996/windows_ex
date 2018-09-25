@@ -1,11 +1,2 @@
-﻿  stdafx.cpp
-  CCombobox.cpp
-  CListview.cpp
-  CMenu.cpp
-  CStatus.cpp
-  CTabView.cpp
-  CToolbar.cpp
-  CTreeView.cpp
-  windows_explorer.cpp
-  Generating Code...
+﻿  windows_explorer.cpp
   windows_explorer.vcxproj -> D:\LapTrinhC\THUC TAP\windows_explorer\windows_explorer\Debug\windows_explorer.exe
