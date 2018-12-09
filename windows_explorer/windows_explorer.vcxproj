@@ -88,7 +88,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)_CRT_SECURE_NO_DEPRECATE</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cbbsort.h" />
     <ClInclude Include="CCombobox.h" />
     <ClInclude Include="CListview.h" />
     <ClInclude Include="CMenu.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="windows_explorer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cbbsort.cpp" />
     <ClCompile Include="CCombobox.cpp" />
     <ClCompile Include="CListview.cpp" />
     <ClCompile Include="CMenu.cpp" />

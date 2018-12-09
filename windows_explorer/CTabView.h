@@ -7,7 +7,7 @@ class CTabView
 public:
 	CTabView();
 	~CTabView();
-	void InitTab(HWND,HINSTANCE);
+	HWND InitTab(HWND,HINSTANCE);
 	void size(HWND);
 };
-
+void OnSelchangeTabCtrlMode(HWND, HWND hWnd2);

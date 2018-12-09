@@ -8,7 +8,7 @@ CToolbar::CToolbar()
 CToolbar::~CToolbar()
 {
 }
-void CToolbar::CreatToolbar(HWND hWnd)
+HWND CToolbar::CreatToolbar(HWND hWnd)
 {
 	 HWND hTool = CreateWindowEx(0, TOOLBARCLASSNAME, NULL, WS_CHILD | WS_VISIBLE, 0, 0, 0, 0, hWnd,
 		(HMENU)IDC_MAIN_TOOL, GetModuleHandle(NULL), NULL);
@@ -29,6 +29,7 @@ void CToolbar::CreatToolbar(HWND hWnd)
 	tbb[1].fsStyle = TBSTYLE_BUTTON;
 	tbb[1].idCommand = ID_FORWARD;
 	SendMessage(hTool, TB_ADDBUTTONS, sizeof(tbb) / sizeof(TBBUTTON), (LPARAM)& tbb);
+	return hTool;
 }
 void CToolbar::size(HWND hWnd)
 {

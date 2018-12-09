@@ -1,2 +1,5 @@
-﻿  windows_explorer.cpp
+﻿  CListview.cpp
+d:\laptrinhc\thuc tap\windows_explorer\windows_explorer\windows_explorer\clistview.cpp(99): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\laptrinhc\thuc tap\windows_explorer\windows_explorer\windows_explorer\clistview.cpp(97): warning C4101: 'filex': unreferenced local variable
+d:\laptrinhc\thuc tap\windows_explorer\windows_explorer\windows_explorer\clistview.cpp(301): warning C4101: 'szLocalTime': unreferenced local variable
   windows_explorer.vcxproj -> D:\LapTrinhC\THUC TAP\windows_explorer\windows_explorer\Debug\windows_explorer.exe

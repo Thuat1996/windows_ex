@@ -25,7 +25,7 @@ CTreeView::~CTreeView()
 HWND CTreeView::CreateTV(HWND hWnd,HINSTANCE g_hInst)
 {
 	hwndTV = CreateWindow(WC_TREEVIEW, L"Tree View", WS_CHILD | WS_VISIBLE | WS_BORDER | TVS_HASLINES | TVS_HASBUTTONS
-		| TVS_SINGLEEXPAND, 0, 85,
+		| TVS_LINESATROOT | TVS_SHOWSELALWAYS | TVS_SINGLEEXPAND, 0, 85,
 		300, 200, hWnd, (HMENU)IDC_MAIN_TREEVIEW, g_hInst, NULL);
 	return hwndTV;
 }
@@ -183,4 +183,12 @@ void CTreeView::DeleteItem(HWND hWnd)
 {
 	SendDlgItemMessage(hWnd, IDC_MAIN_TREEVIEW, TVM_DELETEITEM, TVGN_CARET, (LPARAM)tvi.hItem);
 }
-
+void CTreeView::OnClick(HWND hWnd, CListview *pList, CCombobox *pcbb) // khi click vao treeview
+{
+	memset(&tvi, 0, sizeof(tvi));
+	Selected = (HTREEITEM)SendDlgItemMessage(hWnd, IDC_MAIN_TREEVIEW, TVM_GETNEXTITEM,
+		TVGN_CARET, (LPARAM)Selected);
+	SendDlgItemMessage(hWnd, IDC_MAIN_TREEVIEW, TVM_SELECTITEM, TVGN_CARET, (LPARAM)Selected);
+	flagSelected = true;
+	tvi.hItem = Selected;
+}

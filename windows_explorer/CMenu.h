@@ -10,13 +10,24 @@
 #define IDM_FILE_REFRESH 17
 #define IDM_FILE_NEW 18
 #define IDM_FILE_VIEW 19
+#define IDM_FILE_BACK 20
+#define IDM_FILE_Document 21
+//list
+#define IDM_FILE_OPEN1 22
+#define IDM_FILE_CUT1 23
+#define IDM_FILE_COPY1 24
+#define IDM_FILE_PASTE1 25
+#define IDM_FILE_DELETE1 26
+#define IDM_FILE_RENAME1 27
+#define IDM_FILE_PROPERTIES1 28
+
 
 class CMenu
 {
 public:
 	CMenu();
 	~CMenu();
-	void CreateMenuTree(HWND,LPARAM);
-	void CreateMenuList(HWND,LPARAM);
+	void CreateMenuTree(HWND);
+	void CreateMenuList(HWND);
 };
 
