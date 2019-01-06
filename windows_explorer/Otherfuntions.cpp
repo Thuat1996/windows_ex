@@ -44,12 +44,13 @@ int DeleteDirectory(LPCTSTR lpszdir, bool noRecycleBin = true)
 	delete[] pszFrom;
 	return(wRet == 0);
 }
-int Copy(LPCTSTR lpSource, LPCTSTR lpDestination)
+bool Copy(LPCTSTR lpSource, LPCTSTR lpDestination)
 {
 	TCHAR szSource[MAX_PATH + 2 * sizeof(TCHAR)] = { 0 };
 	TCHAR szDestination[MAX_PATH + 2 * sizeof(TCHAR)] = { 0 };
-	wcsncpy_s(szSource, lpSource, MAX_PATH);
-	wcsncpy_s(szDestination, lpDestination, MAX_PATH);
+
+	_tcsncpy(szSource, lpSource, MAX_PATH);
+	_tcsncpy(szDestination, lpDestination, MAX_PATH);
 
 	SHFILEOPSTRUCT fs;
 	memset(&fs, 0, sizeof(SHFILEOPSTRUCT));
@@ -62,7 +63,7 @@ int Copy(LPCTSTR lpSource, LPCTSTR lpDestination)
 	return (0 == ::SHFileOperation(&fs));
 
 }
-int Cut(LPCTSTR lpSource, LPCTSTR lpDestination)
+bool Cut(LPCTSTR lpSource, LPCTSTR lpDestination)
 {
 	TCHAR szSource[MAX_PATH + 2 * sizeof(TCHAR)] = { 0 };
 	TCHAR szDestination[MAX_PATH + 2 * sizeof(TCHAR)] = { 0 };

@@ -3,8 +3,8 @@
 extern TCHAR Path[MAX_PATH];
 extern TCHAR Path1[MAX_PATH];
 extern TCHAR Path2[MAX_PATH];
+TCHAR Path4[MAX_PATH];
 TCHAR cTmpPath[MAX_PATH]; // bien luu dia chi cua file/folder truoc khi duoc doi ten
-TCHAR cNewPath[MAX_PATH]; // luu dia chi cua file sau khi duoc doi ten
 int wSelected = 0; // bien dung de danh dau phan tu duoc chon
 TCHAR szTextList[260] = { 0 }; //bien luu ten  cua phan tu duoc chon
 LVITEM lvTmp;
@@ -209,7 +209,7 @@ void CListview::onDBClick(HWND hWnd,CCombobox *cbb)
 	// lay text cua phan tu duoc chon
 	SendDlgItemMessage(hWnd, IDC_MAIN_LISTVIEW, LVM_GETITEMTEXT, wIndex, (LPARAM)&lvTmp);
 	/*them dau "/" vao duong dan sau do gan vao bien szcopy*/
-	swprintf_s(szCpy, _T("%s/%s"), Path, szText);
+	swprintf_s(szCpy, _T("%s\\%s"), Path, szText);
 
 	if (GetType(szCpy) == 1) // neu thu muc khong rong
 	{
@@ -234,7 +234,6 @@ void CListview::onClick(HWND hWnd, CCombobox *cbb)
 {
 	TCHAR chCpy[MAX_PATH];
 	int wIndex;
-	TCHAR cNewPath[MAX_PATH];// luu dia chi cua file/folder sau khi doi ten
 	TCHAR szChText[260] = {0}; // luu tru ten phan tu duoc chon
 	// lay chi so dong hien tai
 	wIndex = SendDlgItemMessage(hWnd, IDC_MAIN_LISTVIEW, LVM_GETNEXTITEM, -1, LVNI_FOCUSED);
@@ -245,12 +244,10 @@ void CListview::onClick(HWND hWnd, CCombobox *cbb)
 	lvTmp.cchTextMax = 260;
 	flagList = true;
 	SendDlgItemMessage(hWnd, IDC_MAIN_LISTVIEW, LVM_GETITEMTEXT, wIndex, (LPARAM)&lvTmp);
-	swprintf_s(chCpy, L"%s//%s", Path1, szChText);// lay duoc dan
-	wcscpy_s(Path2, chCpy);
-
-	//Rename file/folder
-	swprintf_s(cNewPath, _T("%s//%s"), Path1, szChText);
-	MoveFile(cTmpPath, cNewPath);
+	//swprintf_s(chCpy, _T("%s\\%s"), Path, szChText);// lay duoc dan
+	//wcscpy_s(Path4, chCpy);
+	////Rename file/folder
+	//MoveFile(cTmpPath, chCpy);
 
 }
 
