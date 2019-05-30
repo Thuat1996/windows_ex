@@ -14,9 +14,6 @@ HWND cbbsort::createcbbsort(HWND hWnd)
 	return hCbb1;
 }
 
-cbbsort::cbbsort()
-{
-}
 
 cbbsort::~cbbsort()
 {
