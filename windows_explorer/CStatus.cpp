@@ -10,20 +10,7 @@ CStatus::CStatus()
 CStatus::~CStatus()
 {
 }
-HWND CStatus::CreateStatus(HWND hWnd)
-{
-	int gMainWindow_Width;
-	HWND hStatus = CreateWindowEx(0, STATUSCLASSNAME, NULL, WS_CHILD | WS_VISIBLE| SBARS_SIZEGRIP, 0, 0, 0, 0, hWnd,
-		(HMENU)IDC_STATUS, GetModuleHandle(NULL), NULL);
-	RECT rect;
-	if (GetWindowRect(hWnd, &rect))
-	{
-		gMainWindow_Width = rect.right - rect.left;
-	}
-	int size[3] = { gMainWindow_Width*0.1, gMainWindow_Width*0.2, gMainWindow_Width*0.3 };
-	SendMessage(hStatus, SB_SETPARTS, 3, (LPARAM)&size);
-	return hStatus;
-}
+
 void CStatus::count_item(HWND h_List, HWND h_stt)
 {
 	LVITEM tmp;
